@@ -17,6 +17,14 @@ class Game {
   }
 
   registerEvents() {
+    document.addEventListener("keypress", (event) => {
+      let pressedLetter = event.code.slice(-1).toLocaleLowerCase();
+      if(pressedLetter === this.currentSymbol.textContent) {
+        this.success();
+      } else {
+        this.fail();
+      }
+    })
     /*
       TODO:
       Написать обработчик события, который откликается
@@ -90,5 +98,5 @@ class Game {
   }
 }
 
-new Game(document.getElementById('game'))
+let theGame = new Game(document.getElementById('game'))
 
