@@ -23,6 +23,9 @@
                 <div class="clicker__status">
                     Всего кликов <span id="clicker__counter">0</span>
                 </div>
+                <div class="clicker__status">
+                    Скорость клика: <span id="clicker__speed">0</span>
+                </div>
                 <img 
                     src="https://i.postimg.cc/T1bWdf2y/1024px-Pepperidge-Farm-Nantucket-Cookie.jpg" 
                     alt=""
@@ -33,5 +36,48 @@
         </div>
     </main>    
     <script src="task.js"></script>
+    <script>
+        // ------------------------------------------------------------------------
+        // original debugging code: successfully autoclicks, but cookie stays still
+        // ------------------------------------------------------------------------
+        
+        // let speedTest = setInterval(() => {
+        //     cookieImg.dispatchEvent(new Event("mousedown"));
+        //     cookieImg.dispatchEvent(new Event("mouseup"));
+        // }, 10);
+
+        // ----------------------------------------------------------------------
+        // attempt to solve static cookie problem: leads to funny cookie collapse
+        // ----------------------------------------------------------------------
+
+        // let speedTest = setInterval(() => {
+        //     cookieImg.dispatchEvent(new Event("mousedown"));
+        //     setTimeout(() => {
+        //         cookieImg.dispatchEvent(new Event("mouseup"));
+        //     }, 5);
+        // }, 11);
+
+        // ---------------
+        // actual solution
+        // ---------------
+
+        // let timeoutDf = 1;
+
+        // function mouseDown() {
+        //     cookieImg.dispatchEvent(new Event("mousedown"));
+        //     setTimeout(() => {
+        //         mouseUp();
+        //     }, timeoutDf);
+        // }
+
+        // function mouseUp() {
+        //     cookieImg.dispatchEvent(new Event("mouseup"));
+        //     setTimeout(() => {
+        //         mouseDown();
+        //     }, timeoutDf);
+        // }
+
+        // mouseDown();
+    </script>
 </body>
 </html>
