@@ -1,9 +1,21 @@
 const tooltip = document.querySelector("#tooltip1");
 
+let previousHasTooltip = null;
+
 document.querySelectorAll(".has-tooltip").forEach(e => {
-    e.addEventListener("mouseover", function(event) {
+    e.addEventListener("click", function(event) {
         tooltip.textContent = this.title;
         tooltip.classList.toggle("tooltip_active");
+        event.preventDefault();
+
+        if(!tooltip.classList.contains("tooltip_active") || Object.is(this, previousHasTooltip)) {
+            return;
+        }
+        
+        previousHasTooltip = this;
+
+        tooltip.style.setProperty("--dy", "0px");
+        tooltip.style.setProperty("--dx", "0px");
 
         let elRect = this.getBoundingClientRect();
         let tipRect = tooltip.getBoundingClientRect();
@@ -31,8 +43,6 @@ document.querySelectorAll(".has-tooltip").forEach(e => {
         }
     });
     e.addEventListener("mouseout", function(event) {
-        tooltip.style.setProperty("--dy", "0px");
-        tooltip.style.setProperty("--dx", "0px");
-        tooltip.classList.toggle("tooltip_active");
+        tooltip.classList.remove("tooltip_active");
     });
 })
