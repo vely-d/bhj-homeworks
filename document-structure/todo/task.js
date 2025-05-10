@@ -52,8 +52,12 @@ function createTask(taskText) {
 }
 
 document.querySelector(".tasks__add").addEventListener("click", function(event) {
+    event.preventDefault();
+    if(!taskInput.value.trim()) {
+        alert("empty task is not valid")
+        return;
+    }
     createTask(taskInput.value);
     tasksList.push(taskInput.value);
     updateLocalTasks();
-    event.preventDefault();
 });
