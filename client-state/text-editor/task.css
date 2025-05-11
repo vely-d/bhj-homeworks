@@ -8,3 +8,27 @@ textarea {
   border: 1px solid #e2e2e2;
   box-sizing: border-box;
 }
+
+/* .card__status {
+  margin-bottom: 10px;
+}
+
+.card__status_saving:after {
+  content: "";
+  animation: dots 0.9s infinite;
+}
+
+@keyframes dots {
+  0% {
+    content: "";
+  }
+  25% {
+    content: ".";
+  }
+  50% {
+    content: "..";
+  }
+  75% {
+    content: "...";
+  }
+} */

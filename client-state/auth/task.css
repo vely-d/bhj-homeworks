@@ -45,3 +45,15 @@
   display: block;
   text-align: center;
 }
+
+.signout-btn {
+  background-color: red;
+}
+
+.signout-btn:hover {
+  background-color: rgb(187, 0, 0);
+}
+
+.title_red {
+  color: red;
+}
