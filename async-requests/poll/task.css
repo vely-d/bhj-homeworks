@@ -9,3 +9,20 @@ body {
 .poll__title {
   margin-bottom: 20px;
 }
+
+.poll__answers {
+  display: none;
+}
+
+.poll__answers_active {
+  display: flex;
+  gap: 20px;
+}
+
+.poll__results {
+  display: none;
+}
+
+.poll__results_active {
+  display: block;
+}
